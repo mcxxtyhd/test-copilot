@@ -1,0 +1,127 @@
+//大数据sql执行命令
+osql -S"127.0.0.1" -U"sa" -P"123" -d"DataEntry" -i"backdate.sql" 
+
+//cdh启动
+/opt/cm-5.4.3/etc/init.d/cloudera-scm-server start
+/opt/cm-5.4.3/etc/init.d/cloudera-scm-agent start
+
+//pip安装的几种格式
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sklearn
+pip install scipy==0.15.1
+pip install -U --force-reinstall --no-binary :all: gevent
+
+//mysql数据库操作
+备份
+mysqldump -uroot -proot --databases world> D:/testBack.sql
+还原
+source D:/testBack.sql
+
+//数据库查看锁
+SELECT * FROM information_schema.innodb_trx 
+
+将exe注册为windows服务
+https://jingyan.baidu.com/article/59703552fee38f8fc107405c.html
+
+//自动生成mapper xml
+mvn mybatis-generator:generate
+
+//视频操作工具
+ffmpeg -i 15508004971.mp4 -r 1  -s 4cif -f image2 image-%05d.jpeg
+ffmpeg -i C:\Users\mcxxt\Desktop\最有15508004971.mp4 -ss 00:00:01 -vframes 1  D:\videoshot\test1.jpg
+
+//不加上测试类的打包
+mvn clean package -Dmaven.test.skip=true
+
+//查找已经安装的软件
+rpm -qa|grep softname
+
+//后台运行 输出日志位置
+nohup java -jar XXX.jar > Log.log & 
+
+//列出所有后台运行的程序
+jobs -l
+
+//杀死某个端口
+kill -9 进程号
+
+//查看所有服务器端口
+netstat -ntlp
+
+//查看防火墙状态
+firewall-cmd --state
+//停止防火墙服务
+systemctl stop firewalld.service
+
+//关闭防火墙的方法为：
+1. 永久性生效
+开启：chkconfig iptables on
+关闭：chkconfig iptables off
+2. 即时生效，重启后失效
+开启：service iptables start
+关闭：service iptables stop
+chkconfig --list iptables
+
+//nginx负载均衡配置
+每个设备的状态设置为:
+1.down 表示单前的server暂时不参与负载
+2.weight 默认为1.weight越大，负载的权重就越大。
+3.max_fails ：允许请求失败的次数默认为1.当超过最大次数时，返回proxy_next_upstream 模块定义的错误
+4.fail_timeout:max_fails次失败后，暂停的时间。
+5.backup： 其它所有的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。
+
+//centos7查看所有的服务  
+systemctl list-units --type=service 
+
+//查找对应名称的所有文件
+find / -name mysql
+
+//重启网络
+service network restart
+
+//网卡
+TYPE=Ethernet
+BOOTPROTO=none
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+NAME=ens160
+UUID=bbe915db-c318-47a7-905b-81c158e8fe76
+DEVICE=ens160
+ONBOOT=yes
+NM_CONTROLLED=yes
+IPADDR=192.168.11.239
+NETMASK=255.255.255.0
+GATEWAY=192.168.11.1
+DNS1=202.96.209.133
+
+//vim源码安装
+cd src
+./configure --prefix=/usr/local
+make 
+make install
+
+//解压 tar包
+tar –xvf file.tar 
+// 解压压缩包
+tar -zxv -f apache-tomcat-8.5.42.tar.gz 
+//查找已经安装的软件
+rpm -qa|grep softname
+//查看端口被哪个进程占用
+netstat -lnp|grep 88  
+//给文件授权
+chmod +x *.sh  
+//也是授权：chmod说明(u:与文件属主拥有一样的权限[a:所有人]；+:增加权限;rwx:可读可写可执行） -R:递归所有目录和文件
+chmod a+rwx -R logs
+
+mdm 123456
+
+
+
+
+
+
+
+
+
+
+
