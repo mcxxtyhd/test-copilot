@@ -1,6 +1,20 @@
-package com.theo.demo.controller;/**
- * @author     ：yangchenxiao
- * @date       ：Created in 2024/6/27 15:39
+package com.theo.demo.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author ：yangchenxiao
+ * @date ：Created in 2024/6/27 15:39
  * @description：
- */public class TestController {
+ */
+@RestController
+@RequestMapping(value = "/test")
+public class TestController {
+
+    @RequestMapping(value = "/theo")
+    public String getTest(){
+        return "666";
+    }
+
 }
