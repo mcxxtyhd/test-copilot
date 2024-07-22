@@ -1,5 +1,6 @@
 package com.theo.demo.controller;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,14 @@ public class TestController {
 
         }
 
-        return "666";
+        return "777";
     }
+
+    @RequestMapping(value = "/Name")
+    public String getName(@PathVariable String name) {
+
+        return "Mr."+name;
+    }
+
 
 }
