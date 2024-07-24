@@ -29,11 +29,25 @@ public class TestController {
         return "777";
     }
 
-    @RequestMapping(value = "/Name")
-    public String getName(@PathVariable String name) {
 
+    /**
+        * Retrieves the name with a prefix.
+        *
+        * @param name the name to be prefixed
+        * @return the prefixed name
+        */
+    @RequestMapping(value = "/Name")
+    public String getName(@PathVariable("name") String name) {
+        
         return "Mr."+name;
     }
 
+
+
+    @RequestMapping(value = "/Name1")
+    public String getName1(@PathVariable("name") String name) {
+        
+        return "Mr."+name;
+    }
 
 }
